@@ -4,21 +4,21 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("professors")
-public class Proffessor {
+public class Professor {
 	@Id
 	private String id;
-	public Proffessor() {
+	public Professor() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Proffessor(String id, String name) {
+	public Professor(String id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
 	}
 	@Override
 	public String toString() {
-		return "Proffessor [id=" + id + ", name=" + name + "]";
+		return "Professor [id=" + id + ", name=" + name + "]";
 	}
 	public String getId() {
 		return id;
