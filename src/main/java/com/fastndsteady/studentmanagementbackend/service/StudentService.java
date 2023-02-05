@@ -17,4 +17,17 @@ public class StudentService {
 	public List<Student> getStudents() {
 		return studentRepo.findAll();
 	}
+
+	public Student addStudent(Student student) {
+		return studentRepo.save(student);
+	}
+
+	public Student getStudent(String id) {
+		return studentRepo.findById(id).get();
+	}
+
+	public String deleteStudent(String id) {
+		studentRepo.deleteById(id);
+		return "Student deleted successfully";
+	}
 }
