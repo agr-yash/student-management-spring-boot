@@ -7,19 +7,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Professor {
 	@Id
 	private String id;
-	public Professor() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public Professor(String id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
-	}
-	@Override
-	public String toString() {
-		return "Professor [id=" + id + ", name=" + name + "]";
-	}
+	private String name;
+	private String branchName;
+	private String phoneNumber;
+	private String emailId;
 	public String getId() {
 		return id;
 	}
@@ -32,5 +23,40 @@ public class Professor {
 	public void setName(String name) {
 		this.name = name;
 	}
-	private String name;
+	public String getBranchName() {
+		return branchName;
+	}
+	public void setBranchName(String branchName) {
+		this.branchName = branchName;
+	}
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	public String getEmailId() {
+		return emailId;
+	}
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+	@Override
+	public String toString() {
+		return "Professor [id=" + id + ", name=" + name + ", branchName=" + branchName + ", phoneNumber=" + phoneNumber
+				+ ", emailId=" + emailId + "]";
+	}
+	public Professor(String id, String name, String branchName, String phoneNumber, String emailId) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.branchName = branchName;
+		this.phoneNumber = phoneNumber;
+		this.emailId = emailId;
+	}
+	public Professor() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 }

@@ -3,6 +3,7 @@ package com.fastndsteady.studentmanagementbackend.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ public class StudentController {
 	StudentService studentService;
 
 	@GetMapping("/students")
+	@CrossOrigin(origins = "*")
 	public List<Student> getStudents() {
 		return studentService.getStudents();
 	}
