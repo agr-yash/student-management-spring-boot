@@ -37,6 +37,7 @@ public class ProfessorController {
 	}
 
 	@DeleteMapping("/professors/{id}")
+	@CrossOrigin(origins = "*")
 	public String deleteProfessor(@PathVariable String id) {
 		return professorService.deleteProfessor(id);
 	}

@@ -37,6 +37,7 @@ public class BranchController {
 	}
 
 	@DeleteMapping("/branches/{id}")
+	@CrossOrigin(origins = "*")
 	public String deleteBranch(@PathVariable String id) {
 		return branchService.deleteBranch(id);
 	}
