@@ -2,6 +2,7 @@ package com.fastndsteady.studentmanagementbackend.service;
 
 import java.util.List;
 
+import org.apache.catalina.startup.ClassLoaderFactory.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,5 +30,10 @@ public class ProfessorService {
 	public String deleteProfessor(String id) {
 		professorRepo.deleteById(id);
 		return "Professor deleted successfully";
+	}
+	public void updateProfessor(Professor professor){
+		Professor p = professorRepo.findById(professor.getId()).get();
+		professorRepo.delete(p);
+		professorRepo.save(professor);
 	}
 }

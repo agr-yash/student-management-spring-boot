@@ -30,4 +30,10 @@ public class StudentService {
 		studentRepo.deleteById(id);
 		return "Student deleted successfully";
 	}
+	public void updateStudent(Student student){
+		Student p = studentRepo.findById(student.getId()).get();
+		studentRepo.delete(p);
+		studentRepo.save(student);
+	}
+	
 }
