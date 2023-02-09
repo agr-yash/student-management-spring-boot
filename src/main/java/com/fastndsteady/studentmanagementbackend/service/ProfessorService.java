@@ -30,4 +30,10 @@ public class ProfessorService {
 		professorRepo.deleteById(id);
 		return "Professor deleted successfully";
 	}
+	public void updateProfessor(Professor professor)
+	{
+		Professor p=repository.findById(professor.getId());
+		professsorRepo.remove(p);
+		professorRepo.add(professor);
+	}
 }

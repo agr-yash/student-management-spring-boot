@@ -41,5 +41,10 @@ public class BranchController {
 	public String deleteBranch(@PathVariable String id) {
 		return branchService.deleteBranch(id);
 	}
+	@PutMapping("/branches")
+	public void updateBranch(@RequestBody Branch branch)
+	{
+	    branchService.updateBranch(branch);
+	}
 
 }

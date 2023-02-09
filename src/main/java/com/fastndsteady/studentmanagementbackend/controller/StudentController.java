@@ -42,4 +42,10 @@ public class StudentController {
 		return studentService.deleteStudent(id);
 	}
 
+	@PutMapping("/students")
+	public void updateStudent(@RequestBody Student student)
+	{
+	      studentService.updateStudent(student);
+	}
+
 }

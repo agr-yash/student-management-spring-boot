@@ -30,5 +30,12 @@ public class BranchService {
 		branchRepo.deleteById(id);
 		return "Branch deleted successfully";
 	}
+
+	public void updateBranch(Branch branch)
+	{
+		Branch p=repository.findById(branch.getId());
+		branchRepo.remove(p);
+		branchRepo.add(branch);
+	}
 	
 }
