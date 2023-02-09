@@ -30,4 +30,8 @@ public class StudentService {
 		studentRepo.deleteById(id);
 		return "Student deleted successfully";
 	}
+
+	public List<Student> getByName(String branchName) {
+		return studentRepo.findByBranchName(branchName);
+	}
 }
