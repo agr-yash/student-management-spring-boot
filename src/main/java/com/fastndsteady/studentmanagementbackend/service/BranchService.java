@@ -33,7 +33,7 @@ public class BranchService {
 
 	public void updateBranch(Branch branch)
 	{
-		Branch p=repository.findById(branch.getId());
+		Branch p=branchRepo.findById(branch.getId());
 		branchRepo.remove(p);
 		branchRepo.add(branch);
 	}
