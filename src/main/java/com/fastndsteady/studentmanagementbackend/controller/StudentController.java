@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fastndsteady.studentmanagementbackend.entity.Student;
@@ -41,5 +42,10 @@ public class StudentController {
 	public String deleteStudent(@PathVariable String id) {
 		return studentService.deleteStudent(id);
 	}
+	@PutMapping("/students")
+    public void updateStudent(@RequestBody Student student)
+    {
+        studentService.updateStudent(student);
+    }
 
 }
