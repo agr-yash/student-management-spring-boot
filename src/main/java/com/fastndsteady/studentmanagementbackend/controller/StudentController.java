@@ -41,5 +41,9 @@ public class StudentController {
 	public String deleteStudent(@PathVariable String id) {
 		return studentService.deleteStudent(id);
 	}
+	@GetMapping("/students/branch/{branchName}")
+	public List<Student> findByCourse(@PathVariable String branchName) {
+		return studentService.getByName(branchName);
+	}
 
 }

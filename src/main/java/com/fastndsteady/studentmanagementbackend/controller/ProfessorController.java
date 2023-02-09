@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fastndsteady.studentmanagementbackend.entity.Professor;
+import com.fastndsteady.studentmanagementbackend.entity.Student;
 import com.fastndsteady.studentmanagementbackend.service.ProfessorService;
 
 @RestController
@@ -42,4 +43,8 @@ public class ProfessorController {
 		return professorService.deleteProfessor(id);
 	}
 
+	@GetMapping("/professors/branch/{branchName}")
+	public List<Professor> findByCourse(@PathVariable String branchName) {
+		return professorService.getByName(branchName);
+	}
 }
