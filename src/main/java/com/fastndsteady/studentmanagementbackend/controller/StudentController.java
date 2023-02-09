@@ -41,9 +41,8 @@ public class StudentController {
 	public String deleteStudent(@PathVariable String id) {
 		return studentService.deleteStudent(id);
 	}
-	//for updating branch
-   
-	@PutMapping("/students")
+	//for updating Students
+   @PutMapping("/students")
 	public void updateStudent(@RequestBody Student student)
 	{
 	      studentService.updateStudent(student);

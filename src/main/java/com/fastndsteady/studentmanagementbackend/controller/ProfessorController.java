@@ -42,7 +42,7 @@ public class ProfessorController {
 		return professorService.deleteProfessor(id);
 	}
 
-	//for updating branch
+	//for updating  professors
   @PutMapping("/professors")
 	public void updateProfessor(@RequestBody Professor professor)
 	{
